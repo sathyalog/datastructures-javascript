@@ -12,5 +12,5 @@ Open your favorite browser and hit this URL `http://127.0.0.1:8080`
 
 Please check index.html to see the list of data structure concepts to cover both theoritical(simple words) and practical concepts.
 
-# CONSTRUCTOR AND PROTOTYPES
+#### CONSTRUCTOR AND PROTOTYPES
 
