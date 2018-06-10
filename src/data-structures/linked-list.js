@@ -31,19 +31,59 @@ LinkedList.prototype.addToTail = function (value) {
     this.tail = newNode;
 }
 
+LinkedList.prototype.removeHead = function () {
+    //if linkedlist empty
+    if(!this.head) return null;
+    //list is not empty. save the value of a head node in a variable
+    var val = this.head.value;
+    //reposition head to the next element so we can remove current head
+    this.head = this.head.next; //new head node
+    //new head node can be a node itself or null if we start with one node in list
+    if(this.head) this.head.prev = null; //only one node in list then make prev as null
+    //if list is empty then this.head is already refer to null and hence make tail as null
+    else this.tail = null;
+    return val; 
+}
+
+LinkedList.prototype.removeTail = function () {
+    //if linkedlist is empty
+    if(!this.tail) return null;
+    //list not empty. store the value of tail node
+    var val = this.tail.value;
+    //change the current tail pointer to the previous node
+    this.tail = this.tail.prev;
+    //is new tail node just assigned are present or list going to be empty after we remove this node
+    //if list is not empty now
+    if(this.tail) this.tail.next = null;
+    //if list is going to be empty after removing original tail node, all we have to set this.head = null, because this.tail is already null
+    else this.head = null;
+    return val;
+}
 
 //let pass a value of 100 as first node. this will be both HEAD & TAIL node
-userList.addToHead(100);
+userList.addToHead('user1');
+console.log(userList.head.value,"added at head");
 //let pass a value of 200 as HEAD node
-userList.addToHead(200);
-userList.addToHead(300);
-userList.addToTail(10);
-userList.addToTail(20);
+userList.addToHead('user2');
+console.log(userList.head.value,"added at head");
+userList.addToHead('user3');
+console.log(userList.head.value,"added at head");
+userList.addToTail('user99');
+console.log(userList.tail.value,"added at tail");
+userList.addToTail('user100');
+console.log(userList.tail.value,"added at tail");
+console.log("%cafter adding multiple nodes at head and tail, table updated as shown in below",'color:green')
+console.table(userList);
+console.log("%cafter removing head, table updated as shown in below",'color:red')
+userList.removeHead();
+console.table(userList);
+console.log("%cafter removing tail, table updated as shown in below",'color:red')
+userList.removeTail();
 console.table(userList);
 
-//you can also check the node value
-console.log(userList.head);
-console.log(userList.head.next);
-console.log(userList.tail);
-console.log(userList.tail.prev);
-console.log(userList.tail.prev.prev);
+//you can also check the node values using the following ways
+// console.log(userList.head);
+// console.log(userList.head.next);
+// console.log(userList.tail);
+// console.log(userList.tail.prev);
+// console.log(userList.tail.prev.prev);
