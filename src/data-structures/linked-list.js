@@ -70,6 +70,22 @@ LinkedList.prototype.search = function(searchValue) {
     return null;
 }
 
+// takes a value and return all indexes of the value in an array. 
+// Say, we have [3,5,3,8] values at [0,1,2,3] indexes. if you want to find '3' indexes, it should return [0,2]
+LinkedList.prototype.indexOf = function (value) {
+    var indexes = [];
+    var currentIndex = 0;
+    var currentNode = this.head;
+    while(currentNode){
+        if(currentNode.value === value){
+            indexes.push(currentIndex);
+        }
+        currentNode = currentNode.next;
+        currentIndex++;
+    }
+    return indexes;
+}
+
 //let pass a value of 100 as first node. this will be both HEAD & TAIL node
 userList.addToHead('user1');
 console.log(userList.head.value,"added at head");
@@ -90,6 +106,10 @@ console.table(userList);
 console.log("%cafter removing tail, table updated as shown in below",'color:red')
 userList.removeTail();
 console.table(userList);
+//add multiple users with same value to find the indexes of it
+userList.addToHead('user10');
+userList.addToTail('user10');
+console.log(userList.indexOf('user10'));
 
 //use search
 console.log(userList.search('user99')); //returns value if searchValue exists in linked list
