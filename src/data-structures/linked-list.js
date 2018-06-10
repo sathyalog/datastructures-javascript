@@ -60,6 +60,16 @@ LinkedList.prototype.removeTail = function () {
     return val;
 }
 
+LinkedList.prototype.search = function(searchValue) {
+    //check if searchvalue exists in linked list or not
+    var currentNode = this.head;
+    while(currentNode){
+        if(currentNode.value === searchValue) return currentNode.value;
+        currentNode = currentNode.next;
+    }
+    return null;
+}
+
 //let pass a value of 100 as first node. this will be both HEAD & TAIL node
 userList.addToHead('user1');
 console.log(userList.head.value,"added at head");
@@ -80,6 +90,10 @@ console.table(userList);
 console.log("%cafter removing tail, table updated as shown in below",'color:red')
 userList.removeTail();
 console.table(userList);
+
+//use search
+console.log(userList.search('user99')); //returns value if searchValue exists in linked list
+console.log(userList.search('nouser'));//returns null as there is no nodevalue with nouser
 
 //you can also check the node values using the following ways
 // console.log(userList.head);
