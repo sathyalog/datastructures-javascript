@@ -16,4 +16,6 @@ Please check index.html to see the list of data structure concepts to cover both
 
 #### STACK
 
+#### QUEUE
+
 #### LINKED LISTS
