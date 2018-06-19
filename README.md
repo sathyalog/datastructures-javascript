@@ -14,5 +14,6 @@ Please check index.html to see the list of data structure concepts to cover both
 
 #### CONSTRUCTOR AND PROTOTYPES
 
-#### LINKED LISTS
+#### STACK
 
+#### LINKED LISTS
