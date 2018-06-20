@@ -1,7 +1,7 @@
 //Queues
 
 function Queue() {
-    collection = []; //this is queue
+    var collection = []; //this is queue
     //display items in queue
     this.print = function () {
         console.log('persons in queue',collection);
