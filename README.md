@@ -19,3 +19,5 @@ Please check index.html to see the list of data structure concepts to cover both
 #### QUEUE
 
 #### LINKED LISTS
+
+You can also find the best tutorials from Egghead. https://egghead.io/lessons/javascript-queue-data-structure-in-javascript
